@@ -3,10 +3,10 @@ public class MyDeque<E> {
   private int size;
   private int start;
   private int end;
+  @SuppressWarnings("unchecked")
   public MyDeque(){
     @SuppressWarnings("unchecked")
-    E[] d = (E[])new Object[10];
-    data = d;
+    data = (E[])new Object[10];
     start = 0;
     end = 0;
   }
@@ -30,7 +30,7 @@ public class MyDeque<E> {
   }
   public void addFirst(E element){
     if (size == data.length) {
-      int[] temp = new int[2*data.length+1];
+      E[] temp = new E[2*data.length+1];
       for (int x = 0; x < data.length; x++) {
         temp[x+1] = data[(x+start)%data.length];
       }
@@ -42,7 +42,7 @@ public class MyDeque<E> {
   }
   public void addLast(E element){
     if (size == data.length) {
-      int[] temp = new int[2*data.length+1];
+      E[] temp = new E[2*data.length+1];
       for (int x = 0; x < data.length; x++) {
         temp[x] = data[(x+start)%data.length];
       }
