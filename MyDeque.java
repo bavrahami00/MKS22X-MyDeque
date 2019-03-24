@@ -55,10 +55,10 @@ public class MyDeque<E> {
         temp[x] = data[(x+start)%data.length];
       }
       start = 0;
-      end = data.length-1;
+      end = data.length;
       data = temp;
     }
-    data[(start+1)%data.length] = element;
+    data[end] = element;
     end = (end+1+data.length)%data.length;
     size++;
   }
