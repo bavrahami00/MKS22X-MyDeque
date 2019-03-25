@@ -63,39 +63,31 @@ public class MyDeque<E> {
     size++;
   }
   public E removeFirst(){
-    try {
-      start = (start+1+data.length)%data.length;
-      size--;
-      return data[(start-1+data.length)%data.length];
-    }
-    catch (NullPointerException a) {
+    if (size == 0) {
       throw new NoSuchElementException();
     }
+    start = (start+1+data.length)%data.length;
+    size--;
+    return data[(start-1+data.length)%data.length];
   }
   public E removeLast(){
-    try {
-      end = (end-1+data.length)%data.length;
-      size--;
-      return data[(end+1+data.length)%data.length];
-    }
-    catch (NullPointerException a) {
+    if (size == 0) {
       throw new NoSuchElementException();
     }
+    end = (end-1+data.length)%data.length;
+    size--;
+    return data[(end+1+data.length)%data.length];
   }
   public E getFirst(){
-    try {
-      return data[start];
-    }
-    catch (NullPointerException a) {
+    if (size == 0) {
       throw new NoSuchElementException();
     }
+    return data[start];
   }
   public E getLast(){
-    try {
-      return data[end];
-    }
-    catch (NullPointerException a) {
+    if (size == 0) {
       throw new NoSuchElementException();
     }
+    return data[end];
   }
 }
