@@ -15,6 +15,27 @@ public class Calculator {
     return stack.getFirst();
   }
   private static void edit(String t, MyDeque<Double> stack) {
-
+    try {
+      stack.addLast(Double.parseDouble(t));
+    }
+    catch (NumberFormatException n) {
+      double second = stack.removeLast();
+      double first = stack.removeLast();
+      if (t.equals("+")) {
+        stack.addLast(first+second);
+      }
+      else if (t.equals("*")) {
+        stack.addLast(first*second);
+      }
+      else if (t.equals("-")) {
+        stack.addLast(first-second);
+      }
+      else if (t.equals("/")) {
+        stack.addLast(first+second);
+      }
+      else if (t.equals("%")) {
+        stack.addLast(first%second);
+      }
+    }
   }
 }
