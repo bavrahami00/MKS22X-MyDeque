@@ -76,7 +76,7 @@ public class MyDeque<E> {
     }
     end = (end-1+data.length)%data.length;
     size--;
-    return data[(end+1+data.length)%data.length];
+    return data[end];
   }
   public E getFirst(){
     if (size == 0) {
