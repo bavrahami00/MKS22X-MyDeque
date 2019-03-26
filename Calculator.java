@@ -20,7 +20,7 @@ public class Calculator {
             stack.addLast(first-second);
           }
           else if (t.equals("/")) {
-            stack.addLast(first+second);
+            stack.addLast(first/second);
           }
           else if (t.equals("%")) {
             stack.addLast(first%second);
